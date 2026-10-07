@@ -12,9 +12,7 @@
   --success: #3F6B50;
   --warning: #A66A2C;
   --danger: #A4483F;
-}
 
-@theme inline {
   --color-nirman-bg: #F7F5F0;
   --color-nirman-surface: #FFFFFF;
   --color-nirman-primary: #191817;
