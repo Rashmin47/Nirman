@@ -1,0 +1,21 @@
+{
+  "name": "nirman-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "dev:all": "concurrently \"pnpm --filter web dev\" \"pnpm run dev:api\"",
+    "dev:api": "cd apps/api && source .venv/bin/activate 2>/dev/null || true && uvicorn app.main:app --reload --port 8000",
+    "build": "pnpm --filter web build",
+    "lint": "pnpm --filter web lint",
+    "test:api": "cd apps/api && python3 -m pytest tests/"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "unrs-resolver"
+    ]
+  }
+}
